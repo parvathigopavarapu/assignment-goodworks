@@ -3,21 +3,21 @@ import './App.css';
 import Flexi from './components/Flexi'
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super()
     this.state = {
       person_name: '',
       states: ''
     }
   }
-  onFlexiSubmit = (state) =>{
+  onFlexiSubmit = (state) => {
+    console.log('in parent' + JSON.stringify(state))
     this.setState({
-      person_name:state.person_name,
+      person_name: state.person_name,
       states: state.states
     })
-
   }
-  render(){
+  render() {
     const flexiConfig = {
       items: [
         {
@@ -37,14 +37,14 @@ class App extends React.Component {
         }
       ]
     };
-  return (
-    <div className="App">
-      {/* sending flexiConfig object as prop to the child component
-          Lifting up the state */}
-     <Flexi onSubmit={this.onFlexiSubmit} config={flexiConfig} stateObj={this.state}/>
-    </div>
-  );
-}
+    return (
+      <div className="App">
+        {/* sending flexiConfig object as prop to the child component
+          Lifting up the state(sending parent state object to the child rather than re-declaring in child component) */}
+        <Flexi onSubmit={this.onFlexiSubmit} config={flexiConfig} stateObj={this.state} />
+      </div>
+    );
+  }
 }
 
 export default App;
