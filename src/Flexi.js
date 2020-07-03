@@ -18,13 +18,15 @@ class Flexi extends React.Component {
 
     render() {
         const { person_name, states } = this.state;
-        return <React.Fragment>
-            <h1>Form</h1>
+        return <div className='App'>
+            <h1 className='text-dark m-5'><u>Simple Form</u></h1>
             <form onSubmit={this.submitFormData}>
                 {this.props.config.items.map(item => {
                     return (
-                    <div key={item.name}>
-                        <label>{item.label}
+                    <div key={item.name} 
+                    >
+                        <label >
+                            <strong>{item.label}:</strong>
                             {item.values ?
                                 <select
                                     name={item.name}
@@ -38,7 +40,7 @@ class Flexi extends React.Component {
                                 </select>
                                 : <input 
                                 type={item.type} 
-                                name={item.name}
+                                name={item.name}                                className=""
                                 value={person_name}
                                 onChange={this.onChange}
                                  />}
@@ -48,10 +50,10 @@ class Flexi extends React.Component {
                 })}
                 <input
                     type='submit'
-                    className='btn btn-primary'
-                    value='Submit' />
+                    className='form-btn btn btn-primary'
+                    value='Submit ' />
             </form>
-        </React.Fragment>
+        </div>
     }
 }
 export default Flexi;

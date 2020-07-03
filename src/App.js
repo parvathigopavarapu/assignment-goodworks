@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import Flexi from './components/Flexi'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Flexi from './Flexi';
 
 class App extends React.Component {
   constructor() {
@@ -11,7 +12,7 @@ class App extends React.Component {
     }
   }
   onFlexiSubmit = (state) => {
-    console.log('in parent' + JSON.stringify(state))
+    alert('The Form data:' + JSON.stringify(state))
     this.setState({
       person_name: state.person_name,
       states: state.states
