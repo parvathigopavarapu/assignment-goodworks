@@ -40,10 +40,10 @@ class Flexi extends React.Component {
                                 </select>
                                 : <input 
                                 type={item.type} 
-                                name={item.name}                                className=""
+                                name={item.name}                             
                                 value={person_name}
                                 onChange={this.onChange}
-                                 />}
+                                />}
                         </label>
                     </div>
                     );
