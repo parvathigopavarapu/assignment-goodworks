@@ -40,8 +40,9 @@ class App extends React.Component {
     };
     return (
       <div className="App">
-        {/* sending flexiConfig object as prop to the child component
-          Lifting up the state(sending parent state object to the child rather than re-declaring in child component) */}
+        {/*Props is a special keyword in React, which stands for properties and is being used for passing data from one component to another. 
+        sending flexiConfig object as prop to the child component 
+          Lifting up the state (Hoisting)(sending parent state object to the child rather than re-declaring in child component) */}
         <Flexi onSubmit={this.onFlexiSubmit} config={flexiConfig} stateObj={this.state} />
       </div>
     );
